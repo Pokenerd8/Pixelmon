@@ -29,7 +29,6 @@ public abstract class Entity6CanBattle extends Entity5Rideable {
 	public ArrayList<StatusEffectBase> status = new ArrayList<StatusEffectBase>();
 	public Moveset moveset = new Moveset();
 	public BattleController battleController;
-	public boolean wasBattleInitiator = false;
 	protected EntityTrainer trainer;
 	public boolean isLockedInBattle = false;
 	public EntityPixelmon locker = null;
@@ -53,7 +52,6 @@ public abstract class Entity6CanBattle extends Entity5Rideable {
 			battleController = null;
 			return;
 		}
-		wasBattleInitiator = true;
 		p2.currentPokemon().battleController = battleController;
 		if (p2.currentPokemon().moveset.size() == 0)
 			p2.currentPokemon().loadMoveset();
@@ -117,13 +115,6 @@ public abstract class Entity6CanBattle extends Entity5Rideable {
 			for (int i = 0; i < attacks.size(); i++)
 				((EntityPlayerMP) getOwner()).openGui(Pixelmon.instance, EnumGui.LearnMove.getIndex(), worldObj, getPokemonId(), attacks.get(i).baseAttack.attackIndex, 0);
 		}
-	}
-
-	@Override
-	public void onUpdate() {
-		super.onUpdate();
-		if (battleController != null && wasBattleInitiator)
-			battleController.update();
 	}
 
 	public ArrayList<Attack> getAttacksAtLevel(int level) {
