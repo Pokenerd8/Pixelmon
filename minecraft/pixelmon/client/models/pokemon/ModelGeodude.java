@@ -150,34 +150,34 @@ public class ModelGeodude extends ModelBase
       setRotation(Right_eyebrow, 0F, 0F, 0.3717861F);
       leftlowerarm2 = new ModelRenderer(this, 0, 24);
       leftlowerarm2.addBox(1.7F, -1.6F, -4.5F, 2, 2, 4);
-      leftlowerarm2.setRotationPoint(4F, 20F, 1F);
+      leftlowerarm2.setRotationPoint(0F,0F,0F);
       leftlowerarm2.setTextureSize(64, 32);
       leftlowerarm2.mirror = true;
       setRotation(leftlowerarm2, -0.0371786F, -0.1487144F, 0.2602503F);
       leftupperarm = new ModelRenderer(this, 12, 26);
       leftupperarm.addBox(-1.2F, -0.5F, -0.5F, 5, 1, 1);
-      leftupperarm.setRotationPoint(4F, 20F, 1F);
+      leftupperarm.setRotationPoint(0F,0F,0F);
       leftupperarm.setTextureSize(64, 32);
       leftupperarm.mirror = true;
       setRotation(leftupperarm, 0.4089656F, 0F, 0F);
       rightlowerarm1 = new ModelRenderer(this, 0, 24);
       rightlowerarm1.addBox(0F, -4F, -1F, 2, 2, 4);
-      rightlowerarm1.setRotationPoint(-4F, 20F, 1F);
+      rightlowerarm1.setRotationPoint(0F,0F,0F);
       rightlowerarm1.setTextureSize(64, 32);
       rightlowerarm1.mirror = true;
       setRotation(rightlowerarm1, -0.0371786F, 2.992878F, 1.226894F);
       rightlowerarm2 = new ModelRenderer(this, 0, 24);
-      rightlowerarm2.addBox(0.5F, -3.5F, 0F, 2, 2, 4);
-      rightlowerarm2.setRotationPoint(-4F, 20F, 1F);
+      rightlowerarm2.addBox(-2.5F, 1.5F, -4F, 2, 2, 4);
+      rightlowerarm2.setRotationPoint(0F,0F,0F);
       rightlowerarm2.setTextureSize(64, 32);
       rightlowerarm2.mirror = true;
-      setRotation(rightlowerarm2, 0F, 3.141593F, 0.9666439F);
-      rightupperarm1 = new ModelRenderer(this, 12, 26);
-      rightupperarm1.addBox(-4.8F, -0.5F, -0.5F, 5, 1, 1);
-      rightupperarm1.setRotationPoint(-3F, 20F, 1F);
-      rightupperarm1.setTextureSize(64, 32);
-      rightupperarm1.mirror = true;
-      setRotation(rightupperarm1, 0.6320364F, 0.0371786F, 0F);
+      setRotation(rightlowerarm2, 0F, 0F, 0.966650606F);
+      rightupperarm = new ModelRenderer(this, 12, 26);
+      rightupperarm.addBox(-3.8F, -0.5F, -0.5F, 5, 1, 1);
+      rightupperarm.setRotationPoint(0F,0F,0F);
+      rightupperarm.setTextureSize(64, 32);
+      rightupperarm.mirror = true;
+      setRotation(rightupperarm, 0.6320364F, 0.0371786F, 0F);
     LEFTARMPIECE = new ModelRenderer(this, "LEFTARMPIECE");
     LEFTARMPIECE.setRotationPoint(4F, 20F, 1F);
     setRotation(LEFTARMPIECE, 0F, 0F, 0F);
@@ -262,11 +262,14 @@ public class ModelGeodude extends ModelBase
       RIGHTARMPIECE.addChild(rightthumb);
       RIGHTARMPIECE.addChild(rightupperarm1);
       RIGHTARMPIECE.addChild(rightlowerarm);
-      RIGHTARMPIECE.addChild(rightupperarm);
+
+
+     
+      
       RIGHTARMPIECE.addChild(rightlowerarm1);
       RIGHTARMPIECE.addChild(rightlowerarm2);
       
-      
+      RIGHTARMPIECE.addChild(rightupperarm);  
       
   }
   

@@ -32,6 +32,7 @@ public abstract class Entity6CanBattle extends Entity5Rideable {
 	protected EntityTrainer trainer;
 	public boolean isLockedInBattle = false;
 	public EntityPixelmon locker = null;
+	public boolean transformed;
 
 	public Entity6CanBattle(World par1World) {
 		super(par1World);

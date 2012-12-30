@@ -80,6 +80,7 @@ public class BattleController {
 
 	public void endBattle(boolean did1Win) {
 		
+		
 		battleEnded = true;
 		participant1.EndBattle(did1Win, participant2);
 		participant2.EndBattle(!did1Win, participant1);

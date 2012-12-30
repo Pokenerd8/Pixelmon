@@ -29,6 +29,7 @@ public enum SpecialAttackType {
 	SeismicToss,
 	SmackDown,
 	Substitute,
+	Transform,
 	Venoshock;
 
 	public static SpecialAttackType getSpecialAttackType(String string) {
@@ -60,6 +61,7 @@ public enum SpecialAttackType {
 		if (string.equalsIgnoreCase("SeismicToss")) return SpecialAttackType.SeismicToss;
 		if (string.equalsIgnoreCase("SmackDown")) return SpecialAttackType.SmackDown;
 		if (string.equalsIgnoreCase("Substitute")) return SpecialAttackType.Substitute;
+		if (string.equalsIgnoreCase("Transform")) return SpecialAttackType.Transform;
 		if (string.equalsIgnoreCase("Venoshock")) return SpecialAttackType.Venoshock;
 		return null;
 	}
@@ -93,6 +95,7 @@ public enum SpecialAttackType {
 		if (string.equalsIgnoreCase("SeismicToss")) return true;
 		if (string.equalsIgnoreCase("SmackDown")) return true;
 		if (string.equalsIgnoreCase("Substitute")) return true;
+		if (string.equalsIgnoreCase("Transform")) return true;
 		if (string.equalsIgnoreCase("Venoshock")) return true;
 		return false;
 	}
