@@ -41,6 +41,7 @@ import pixelmon.battles.attacks.specialAttacks.Reversal;
 import pixelmon.battles.attacks.specialAttacks.SeismicToss;
 import pixelmon.battles.attacks.specialAttacks.SolarBeam;
 import pixelmon.battles.attacks.specialAttacks.SpecialAttackType;
+import pixelmon.battles.attacks.specialAttacks.Twineedle;
 import pixelmon.battles.attacks.specialAttacks.Venoshock;
 import pixelmon.battles.attacks.statusEffects.Burn;
 import pixelmon.battles.attacks.statusEffects.Confusion;
@@ -245,6 +246,8 @@ public class EffectParser {
 				effect = new Reversal();
 			else if (SpecialAttackType.getSpecialAttackType(effectTypeString)== SpecialAttackType.SeismicToss)
 				effect = new SeismicToss();
+			else if (SpecialAttackType.getSpecialAttackType(effectTypeString)== SpecialAttackType.Twineedle)
+				effect = new Twineedle();
 			else if (SpecialAttackType.getSpecialAttackType(effectTypeString)== SpecialAttackType.Venoshock)
 				effect = new Venoshock();
 			
