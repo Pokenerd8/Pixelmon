@@ -135,8 +135,9 @@ public class ModelZubat extends ModelBase {
 	}
 
 	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-		leftwing.rotateAngleY = MathHelper.cos(f2 * f);
+	/*	leftwing.rotateAngleY = MathHelper.cos(f2 * f);
 		rightwing.rotateAngleY = MathHelper.cos(f2 * f + 3.14159F);
+		*/
 	}
 
 }
