@@ -63,6 +63,7 @@ import pixelmon.battles.attacks.statusEffects.SafeGuard;
 import pixelmon.battles.attacks.statusEffects.Sleep;
 import pixelmon.battles.attacks.statusEffects.StatusEffectType;
 import pixelmon.battles.attacks.statusEffects.Sunny;
+import pixelmon.battles.attacks.statusEffects.Transform;
 import pixelmon.battles.attacks.statusEffects.TrickRoom;
 import pixelmon.battles.attacks.statusEffects.WaitAfter;
 import pixelmon.battles.attacks.statusEffects.Yawn;
@@ -161,6 +162,8 @@ public class EffectParser {
 				effect = new Sleep();
 			if (StatusEffectType.getStatusEffect(effectTypeString) == StatusEffectType.Sunny)
 				effect = new Sunny();
+			if (StatusEffectType.getStatusEffect(effectTypeString) == StatusEffectType.Transform)
+				effect = new Transform();
 			if (StatusEffectType.getStatusEffect(effectTypeString) == StatusEffectType.TrickRoom)
 				effect = new TrickRoom();
 			if (StatusEffectType.getStatusEffect(effectTypeString) == StatusEffectType.WaitAfter)

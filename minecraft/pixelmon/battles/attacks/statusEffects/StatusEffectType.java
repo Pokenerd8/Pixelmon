@@ -26,7 +26,8 @@ public enum StatusEffectType {
 	Perish(22), 
 	Rest(23),
 	Yawn(24),
-	LockedInBattle(25);
+	LockedInBattle(25),
+	Transform(26);
 	
 	public boolean canStack = false;
 	public int index;
