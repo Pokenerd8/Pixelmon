@@ -227,7 +227,7 @@ public class EffectParser {
 				effect = new Frustration();
 			else if (SpecialAttackType.getSpecialAttackType(effectTypeString)== SpecialAttackType.HiddenPower)
 				effect = new HiddenPower();
-			else if (SpecialAttackType.getSpecialAttackType(effectTypeString)== SpecialAttackType.HiddenPower)
+			else if (SpecialAttackType.getSpecialAttackType(effectTypeString)== SpecialAttackType.Magnitude)
 				effect = new Magnitude();
 			else if (SpecialAttackType.getSpecialAttackType(effectTypeString)== SpecialAttackType.NightShade)
 				effect = new NightShade();
