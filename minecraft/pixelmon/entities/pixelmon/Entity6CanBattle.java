@@ -15,6 +15,7 @@ import pixelmon.battles.attacks.attackEffects.EffectBase;
 import pixelmon.battles.attacks.attackEffects.EffectParser;
 import pixelmon.battles.attacks.statusEffects.StatusEffectBase;
 import pixelmon.battles.attacks.statusEffects.StatusEffectType;
+import pixelmon.battles.attacks.statusEffects.Transform;
 import pixelmon.battles.participants.IBattleParticipant;
 import pixelmon.battles.participants.PlayerParticipant;
 import pixelmon.database.DatabaseMoves;
@@ -63,6 +64,19 @@ public abstract class Entity6CanBattle extends Entity5Rideable {
 	public void EndBattle() {
 		// pixelmon.isSwimming = true;
 		battleController = null;
+		for (int i = 0; i < status.size(); i++) {
+			
+			if (this.status.get(i).type == StatusEffectType.Transform) {
+				
+			Transform t = (Transform) this.status.get(i);
+			this.moveset = t.oldMoveset;
+			this.init(t.oldName);
+				
+			}
+			
+		}
+		battleController = null;
+		
 	}
 
 	public void setTrainer(EntityTrainer trainer) {
