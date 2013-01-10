@@ -21,10 +21,9 @@ public class PixelmonConfig {
 
 	public static boolean allowNonPixelmonMobs;
 
-	public static int maxPokemonPerChunk = 3;
-
-	public static int chanceOfNoPokemon;
-
+	public static int maxNumLandPokemon;
+	public static int maxNumWaterPokemon;
+	
 	public static boolean scaleModelsUp;
 
 	public static int idTrainers = 199;
@@ -38,8 +37,8 @@ public class PixelmonConfig {
 		PixelmonBlocks.load(config);
 		PixelmonItems.load(config);
 		allowNonPixelmonMobs = config.get("general", "Allow vanilla mobs", false).getBoolean(false);
-		maxPokemonPerChunk = config.get("general", "Max number of pokemon per chunk", 4).getInt(4);
-		chanceOfNoPokemon = config.get("general", "Percent chance of no pokemon in chunk", 30).getInt(20);
+		maxNumLandPokemon = config.get("general", "Max number of Land Pokemon (at one time)", 40).getInt(40);
+		maxNumWaterPokemon = config.get("general", "Max number of Water Pokemon (at one time)", 20).getInt(20);
 		scaleModelsUp = config.get("general", "Scale Models Up", true).getBoolean(true);
 		idTrainers = config.get("IDs", "Trainer ID", 199).getInt(199);
 		idPixelmon = config.get("IDs", "Pixelmon ID", 200).getInt(200);

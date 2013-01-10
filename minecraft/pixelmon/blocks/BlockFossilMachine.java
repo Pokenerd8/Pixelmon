@@ -20,6 +20,7 @@ import pixelmon.config.PixelmonItemsFossils;
 import pixelmon.config.PixelmonItemsPokeballs;
 import pixelmon.entities.pixelmon.EntityPixelmon;
 import pixelmon.entities.pokeballs.PokeballTypeHelper;
+import pixelmon.enums.EnumPokemon;
 import pixelmon.items.ItemPokeBall;
 import pixelmon.items.ItemPokemonFossil;
 import pixelmon.storage.PixelmonStorage;
@@ -139,7 +140,10 @@ public class BlockFossilMachine extends BlockContainer {
 			((WorldServer) world).getPlayerManager().flagChunkForUpdate(x, y, z);
 			return true;
 		}
-		if (player.getCurrentEquippedItem() != null && (player.getCurrentEquippedItem().getItem() instanceof ItemPokemonFossil) && tile.currentFossil == -1
+
+		if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ItemPokemonFossil && EnumPokemon.hasPokemon(((ItemPokemonFossil)player.getCurrentEquippedItem().getItem()).pokemon))
+		if ((player.getCurrentEquippedItem().getItem() instanceof ItemPokemonFossil) && tile.currentFossil == -1
+
 				&& !tile.pokemonOccupied) {
 			tile.currentFossil = player.getCurrentEquippedItem().itemID;
 			player.getCurrentEquippedItem().stackSize--;
