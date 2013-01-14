@@ -84,7 +84,6 @@ public enum SpecialAttackType {
 		if (string.equalsIgnoreCase("HornDrill")) return true;
 		if (string.equalsIgnoreCase("JumpKick")) return true;
 		if (string.equalsIgnoreCase("Magnitude")) return true;
-		if (string.equalsIgnoreCase("MilkDrink")) return true;
 		if (string.equalsIgnoreCase("NightShade")) return true;
 		if (string.equalsIgnoreCase("PainSplit")) return true;
 		if (string.equalsIgnoreCase("Payday")) return true;

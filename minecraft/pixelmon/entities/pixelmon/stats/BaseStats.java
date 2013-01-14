@@ -3,6 +3,7 @@ package pixelmon.entities.pixelmon.stats;
 import net.minecraft.entity.EnumCreatureType;
 import pixelmon.database.ExperienceGroup;
 import pixelmon.database.SpawnConditions;
+import pixelmon.database.SpawnLocation;
 import pixelmon.enums.EnumPokemon;
 import pixelmon.enums.EnumType;
 
@@ -33,8 +34,6 @@ public class BaseStats {
 
 	public Aggression aggression;
 
-	public EnumCreatureType creatureType;
-
 	public String droppedItem;
 
 	public SwimmingParameters swimmingParameters;
@@ -45,4 +44,5 @@ public class BaseStats {
 	public boolean canSurfSet;
 	public float ridingOffsetX = 0, ridingOffsetY = 0, ridingOffsetZ = 0;
 	public int maxGroupSize;
+	public SpawnLocation[] spawnLocations;
 }

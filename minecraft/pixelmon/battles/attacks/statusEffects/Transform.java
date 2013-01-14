@@ -7,8 +7,8 @@ import pixelmon.entities.pixelmon.EntityPixelmon;
 import pixelmon.entities.pixelmon.stats.Moveset;
 
 public class Transform extends StatusEffectBase {
-	public String oldName;
-	public Moveset oldMoveset;
+	public String oldName= null;
+	public Moveset oldMoveset = null;
 	public Transform() {
 		super(StatusEffectType.Transform, false, false, true);
 		
@@ -42,7 +42,9 @@ public class Transform extends StatusEffectBase {
 		user.stats.Speed = target.stats.Speed;
 	*/
 		ChatHandler.sendBattleMessage(user.getOwner(),  target.getOwner(), user.getNickname() + " transformed!");
+			String oldNickname = user.getNickname();
 			user.init(target.getName());
+			user.setNickname(oldNickname);
 			user.moveset = target.moveset;
 			user.moveset.get(1).pp = 5; // <--- Same with that
 			if(user.moveset.get(2) != null)
@@ -51,6 +53,7 @@ public class Transform extends StatusEffectBase {
 			user.moveset.get(3).pp = 5;
 			if(user.moveset.get(4) != null)
 			user.moveset.get(4).pp = 5;
+			user.status.add(this);
 			
 	
 	

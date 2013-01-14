@@ -63,15 +63,18 @@ public abstract class Entity6CanBattle extends Entity5Rideable {
 
 	public void EndBattle() {
 		// pixelmon.isSwimming = true;
+		System.out.println("part1");
 		battleController = null;
 		for (int i = 0; i < status.size(); i++) {
-			
+
 			if (this.status.get(i).type == StatusEffectType.Transform) {
-				
+				System.out.println("BINGO");
 			Transform t = (Transform) this.status.get(i);
+			
 			this.moveset = t.oldMoveset;
 			this.init(t.oldName);
-				
+
+			
 			}
 			
 		}

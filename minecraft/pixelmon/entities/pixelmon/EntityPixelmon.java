@@ -23,6 +23,7 @@ import pixelmon.comm.PacketCreator;
 import pixelmon.config.PixelmonItems;
 import pixelmon.database.DatabaseMoves;
 import pixelmon.database.SpawnConditions;
+import pixelmon.database.SpawnLocation;
 import pixelmon.entities.trainers.EntityTrainer;
 import pixelmon.items.ItemEther;
 import pixelmon.items.ItemEvolutionStone;
@@ -37,6 +38,7 @@ import pixelmon.storage.PixelmonStorage;
 
 public class EntityPixelmon extends Entity9HasSounds {
 
+	public SpawnLocation pokemonType;
 	public boolean playerOwned = false;
 
 	public EntityPixelmon(World par1World) {
@@ -72,7 +74,7 @@ public class EntityPixelmon extends Entity9HasSounds {
 
 			if (itemstack != null) {
 				if (getOwner() == player) {
-					if (itemstack.itemID == PixelmonItems.rareCandy.shiftedIndex) {
+					if (itemstack.itemID == PixelmonItems.rareCandy.itemID) {
 						getLvl().awardEXP(getLvl().getExpToNextLevel() - getLvl().getExp());
 						if (!player.capabilities.isCreativeMode)
 							player.inventory.consumeInventoryItem(itemstack.itemID);
@@ -192,7 +194,7 @@ public class EntityPixelmon extends Entity9HasSounds {
 	// }
 
 	public boolean getCanSpawnHere() {
-		if (baseStats.creatureType == EnumCreatureType.waterCreature) {
+		if (pokemonType == SpawnLocation.Water) {
 			int wdepth = WorldHelper.getWaterDepth((int) posX, (int) posY, (int) posZ, worldObj);
 			if (wdepth > baseStats.swimmingParameters.depthRangeStart && wdepth < baseStats.swimmingParameters.depthRangeEnd)
 				return true;
@@ -224,8 +226,9 @@ public class EntityPixelmon extends Entity9HasSounds {
 				conds[s.index] = false;
 			if (s == SpawnConditions.Sand && blockId != Block.sand.blockID)
 				conds[s.index] = false;
-			if (s == SpawnConditions.Darkness && lightLevel > 11)
-				conds[s.index] = false;
+			if (s == SpawnConditions.Darkness)
+				if (lightLevel > 11 && !(var2 < 60 && !this.worldObj.canBlockSeeTheSky(var1, var2, var3)))
+					conds[s.index] = false;
 			if (s == SpawnConditions.DayLight && lightLevel < 11)
 				conds[s.index] = false;
 		}
@@ -298,8 +301,8 @@ public class EntityPixelmon extends Entity9HasSounds {
 	}
 
 	@Override
-	public EntityAgeable func_90011_a(EntityAgeable var1) {
-		// TODO Auto-generated method stub
+	public EntityAgeable createChild(EntityAgeable var1) {
 		return null;
 	}
+
 }
